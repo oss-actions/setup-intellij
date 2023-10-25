@@ -1,6 +1,8 @@
 import {
 	addPath,
 	debug,
+	endGroup,
+	group,
 	panic,
 	randomDir,
 	randomPath,
@@ -22,7 +24,9 @@ async function downloadAndInstall(version: string) {
 	const url = downloadUrl(version, os, arch);
 
 	const tarballPath = await tc.downloadTool(url, randomPath());
+	group("Extracting contents");
 	const dir = await tc.extractTar(tarballPath, await randomDir());
+	endGroup();
 	const pathToIdea = join(dir, readdirSync(dir)[0], "bin");
 
 	await addPath(pathToIdea);
