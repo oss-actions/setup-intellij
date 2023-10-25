@@ -1,0 +1,13 @@
+name: Setup IntelliJ Community
+description: Setup IntelliJ Community Edition on the job
+branding:
+  icon: box
+  color: orange
+runs:
+  using: node20
+  main: dist/main.js
+inputs:
+  version:
+    description: The version to install of IntelliJ IDEA Community Edition
+    required: false
+    default: "2023.2.4"
