@@ -10,4 +10,4 @@ inputs:
   version:
     description: The version to install of IntelliJ IDEA Community Edition
     required: false
-    default: "2023.2.4"
+    default: "2023.2.5"
